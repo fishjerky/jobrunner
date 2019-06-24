@@ -38,6 +38,13 @@ func (e ReminderEmails) Run() {
 ```go
 
 // Example of GIN micro framework
+import (
+	"net/http"
+
+	"github.com/bamzi/jobrunner"
+	"github.com/gin-gonic/gin"
+)
+
 func main() {
     routes := gin.Default()
 
@@ -61,7 +68,7 @@ func JobJson(c *gin.Context) {
 
 func JobHtml(c *gin.Context) {
     // Returns the template data pre-parsed
-    c.HTML(200, "", jobrunner.StatusPage())
+    c.HTML(200, "Status.html", jobrunner.StatusPage())
 
 }
 
